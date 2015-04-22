@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MYDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source "${MYDIR}/_main.sh"
+source "${MYDIR}/_lib.sh"
 
 if [ "$is_help" == "true" ]; then
     cat << EOF

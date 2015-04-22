@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 MYDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source "${MYDIR}/_main.sh"
+source "${MYDIR}/_lib.sh"
 
 cat << EOF
 --------------------------------------------------------------------
