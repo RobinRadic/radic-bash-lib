@@ -1,7 +1,7 @@
 #!/bin/bash
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-if [ ! -z "${NO_OPTS}" ]; then
+if [ -z "${NO_OPTS}" ]; then
     is_verbose="false"
     is_debug="false"
     is_help="false"
