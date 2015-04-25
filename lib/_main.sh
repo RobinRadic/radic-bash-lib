@@ -1,6 +1,11 @@
 #!/bin/bash
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
+require() {
+    local lib="${1}"
+    source "${DIR}/_${lib}.sh"
+}
+
 if [ -z "${NO_OPTS}" ]; then
     is_verbose="false"
     is_debug="false"
@@ -19,5 +24,6 @@ if [ -z "${NO_OPTS}" ]; then
       esac
     done
 fi
-source "${DIR}/_ui.sh"
-source "${DIR}/_functions.sh"
+
+require ui
+require functions

@@ -11,3 +11,6 @@ cat << EOF
 EOF
 
 Exec ls -al
+
+require git
+echo "last tag: $(git_tag_last)"
