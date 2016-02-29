@@ -49,11 +49,14 @@ else
     exit 1
 fi
 
+branch_name=$(git symbolic-ref -q HEAD)
+branch_name=${branch_name##refs/heads/}
+branch_name=${branch_name:-HEAD}
 
 git add -A
 NOW=$(date +"%d-%m-%Y %T")
 git commit -m "Tagging ${NEW_TAG}"
-git push -u origin master
+git push -u origin "${branch_name}"
 
 git tag -a ${NEW_TAG} -m "Tagged: ${NEW_TAG} @ ${NOW}"
 git push -u origin ${NEW_TAG}
