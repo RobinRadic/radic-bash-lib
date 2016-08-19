@@ -177,3 +177,8 @@ _untar() {
     local filename=$1
     tar -zxvf $filename
 }
+
+
+_make_json(){
+    php -r "echo json_encode($1, JSON_UNESCAPED_SLASHES);"
+}
